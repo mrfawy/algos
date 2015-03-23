@@ -1,0 +1,52 @@
+Big O notation
+
+searching
+Sorting
+Union find 
+Greedy
+Dynamic 
+Backtracking
+Divide and conquer
+String matching
+Combinatorial
+Bit Algorithms 
+Probability
+Hard problems ( NP time )
+Geometry 
+
+Data structures:
+Elem : List,Stack,Queue,Dictionary
+Hash,
+heap
+Tree (B-tree,binary , binary search ), balnced (R-B , AVL ,..)
+Graph ( bi, uni , weighted , MST )
+bloom filters
+
+Knowlege base 
+Java language 
+OS
+Design & OO 
+Concurrency 
+Scaling
+test 
+
+
+Now :
+Big O
+Search
+Java quirks
+array ,List , Stack , queue 
+Make account for Top coder , try SR 250 pronblems 
+
+Week 1 : Big O , arrays 
+Resources : 
+Code interview
+Cracking coding interview
+GeeksforGeeks
+http://www.spoj.com/BSCPROG/problems/arrays/
+Top coder 
+
+
+Reference :
+Algorithm design Manual 
+Introduction to algorithms 
