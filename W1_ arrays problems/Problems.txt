@@ -11,7 +11,7 @@ Kadane's algorithm
 http://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
 =================================
 
-Given an array that is a rotation of a sorted array (elements are unique). The rotation of an array is to split the original array into two parts and concatenate the left part to the tail of the right part. E.g., {3,4,5,1,2} is a rotation of {1,2,3,4,5}. Now given this rotated array, find the smallest element.
+Q2)Given an array that is a rotation of a sorted array (elements are unique). The rotation of an array is to split the original array into two parts and concatenate the left part to the tail of the right part. E.g., {3,4,5,1,2} is a rotation of {1,2,3,4,5}. Now given this rotated array, find the smallest element.
 
 solution :
 modified binary search 
@@ -28,7 +28,7 @@ while a[l]>a[r] do
 return a[l]
 
 ==================================
-Given a sorted array, if A[i] == i, i is called magic index. Find the magic index.
+Q3)Given a sorted array, if A[i] == i, i is called magic index. Find the magic index.
 followup : values are distinct 
 input :
 [-23, -4, 2, 19, 56]
@@ -37,6 +37,60 @@ output:
 solution :
 modified binary search 
 https://github.com/yxjiang/algorithms/blob/master/src/main/java/algorithm/cc150/chapter9/Question3.java
+http://comproguide.blogspot.com/2014/02/finding-magic-index-of-array.html
 
 Guide line :
 Given Sorted array <=> Binary search can be modified to do lots of stuff
+
+====================
+Q4)given an array A=BC where B is a sorted array with non-increasing order, and C is a sorted array with non-decreasing order. Find B and C.
+input 
+7 6 5 4 1 2 3 4 5 6 
+output 
+1 ( separation point )
+soution:
+again modified binary search 
+int separation(int[] a) {
+		if (a == null || a.length == 0)
+			return -1;
+		int start = 0;
+		int end = a.length - 1;
+		int mid = -1;
+
+		while (end > start) {
+			mid = (start + end) / 2;
+
+			if (a[mid] < a[start]) {
+				start = mid;
+			}
+			if (a[mid] < a[end]) {
+				end = mid;
+			}
+
+		}
+		return mid;
+
+	}
+
+Q5)
+Given an array of of size n and a number k, find all elements that appear more than n/k times
+input :
+3, 1, 2, 2, 1, 2, 3, 3  and k is 4
+output :
+2, 3
+http://www.geeksforgeeks.org/given-an-array-of-of-size-n-finds-all-the-elements-that-appear-more-than-nk-times/
+
+Q6)Given an array of integers, all integers occur exactly twice except for one. Find the only integer that occurs once.
+solution :
+use bit xoring of all elements 
+
+Q7)
+given a sorted array, find two numbers that sum to m
+
+ a trick called ruler reading. Keep two pointers to the left and right of the array, and move the pointers until the sum if m. O(n)
+
+
+
+
+more problems :
+http://fdatamining.blogspot.com/2013/10/a-collection-of-interview-questions-on.html
