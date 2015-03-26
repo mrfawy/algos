@@ -94,3 +94,4 @@ given a sorted array, find two numbers that sum to m
 
 more problems :
 http://fdatamining.blogspot.com/2013/10/a-collection-of-interview-questions-on.html
+http://www.crazyforcode.com/array/
