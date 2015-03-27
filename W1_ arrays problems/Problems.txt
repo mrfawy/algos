@@ -74,6 +74,7 @@ int separation(int[] a) {
 
 Q5)
 Given an array of of size n and a number k, find all elements that appear more than n/k times
+another question : find the most repeated number 
 input :
 3, 1, 2, 2, 1, 2, 3, 3  and k is 4
 output :
@@ -91,7 +92,56 @@ given a sorted array, find two numbers that sum to m
 
 
 
+Q8)
+Count Pairs of Numbers with a Given Difference K
+Input: arr[] = {1, 5, 3, 4, 2}, k = 3
+Output: 2
+There are 2 pairs with difference 3, the pairs are {1, 4} and {5, 2} 
 
-more problems :
+Input: arr[] = {8, 12, 16, 4, 0, 20}, k = 4
+Output: 5
+There are 5 pairs with difference 4, the pairs are {0, 4}, {4, 8}, 
+{8, 12}, {12, 16} and {16, 20} 
+
+sort first , then use binary search for (A[i]+k) => O(nlogn) 
+use hashing and search for (A[i]+k) => time O(N) , space O(n)
+
+
+http://www.geeksforgeeks.org/count-pairs-difference-equal-k/
+
+Q9)“Given two arrays find all the points of intersection between the (i.e. equal elements) and return them in an array.”
+
+soln : if sorted we can do it in O(M+N)
+/ Precondition: arr1 and arr2 are both sorted.
+func intersection1(arr1, arr2):
+  intersect = { }
+  i1 = 0;
+  i2 = 0;
+  while i1 < arr1.length and i2 < arr2.length:
+    if arr1[i1] == arr2[i2]:
+      intersect.add(arr1[i1])
+      i1++
+      i2++
+    else if arr1[i1] < arr2[i2]:
+      i1++
+    else:
+      i2++
+  return intersect
+if not sorted , sort the smaller , and loop larger a[i]and binary search b[a[i]] =>O(nlogn)
+another option is to hash the smaller , and loop larger and lookup =>time N , space N 
+
+http://www.geeksforgeeks.org/union-and-intersection-of-two-sorted-arrays-2/
+
+Q10)Missing Number in an Array
+An array n - 1 unique numbers in the range from 0 to n - 1. There is only one number in the range from 0 to n - 1 missing. Please write a function to find the missing number. 
+
+soln:
+ If we scan all numbers in the array, we could get the sum of all numbers. The sum is denoted as sum1.we could also get the sum of all numbers in the range from 0 to n - 1, which is n*(n-1)/2. The sum is denoted as sum2. The only number missing in the array is the difference between sum2 and sum1.  => O(N) , space (1)
+ 
+
+
+
+ more problems :
+http://www.geeksforgeeks.org/category/c-arrays/
 http://fdatamining.blogspot.com/2013/10/a-collection-of-interview-questions-on.html
 http://www.crazyforcode.com/array/
