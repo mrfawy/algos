@@ -12,6 +12,7 @@ http://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
 =================================
 
 Q2)Given an array that is a rotation of a sorted array (elements are unique). The rotation of an array is to split the original array into two parts and concatenate the left part to the tail of the right part. E.g., {3,4,5,1,2} is a rotation of {1,2,3,4,5}. Now given this rotated array, find the smallest element.
+another question :Turning number is the maximum number in an array which increases and then decreases. This kind of array is also named unimodal array
 
 solution :
 modified binary search 
@@ -137,7 +138,52 @@ An array n - 1 unique numbers in the range from 0 to n - 1. There is only one nu
 
 soln:
  If we scan all numbers in the array, we could get the sum of all numbers. The sum is denoted as sum1.we could also get the sum of all numbers in the range from 0 to n - 1, which is n*(n-1)/2. The sum is denoted as sum2. The only number missing in the array is the difference between sum2 and sum1.  => O(N) , space (1)
- 
+
+
+Q11 ) reverse an array in place ( simplest question ever :D )
+recusion or iter works 
+int[] reverse(int[] a) {
+		if (a == null || a.length == 0)
+			return a;
+
+		int start = 0;
+		int end = a.length - 1;
+		while (start < end) {
+			int temp = a[start];
+			a[start] = a[end];
+			a[end] = temp;
+			start++;
+			end--;
+		}
+		return a;
+	}
+
+
+Q12) Merging 2 Arrays without using Extra Space
+Given two sorted arrays, A and B. Write a method merging the elements of B into A in sorted order. Assume A has a large enough buffer at the end to hold all of B’s elements
+soln : merge sort from right 
+
+Q13)Largest Difference in an Array
+int[] A = { 10, 3, 6, 8, 9, 4, 3 };
+to find the largest difference between A[Q] and A[P] such that Q > P.
+If P = 1 and Q = 4
+diff = A[Q] – A[P]
+diff = 9 – 3
+diff = 6
+Since 6 is the largest number between all the difference, that is the answer.
+
+sln o(n):
+int maxDiff (int [] a ){
+		if (a==null ||a.length==0)
+			return 0;	
+		int min=a[0];
+		int maxDiff=0;
+		for (int i=0;i<a.length;i++){
+			min=Math.min(min,a[i])	;	
+			maxDiff=Math.max(maxDiff,a[i]-min);
+		}
+		return maxDiff;
+	}
 
 
 

@@ -1,0 +1,21 @@
+Q1) permute String 
+
+Soln:
+select each character at a time as prefix , append permuted rest of string
+void printpermutes(String s ){
+		if (s.isEmpty())
+			return ;	
+		printPer("",s);
+	}
+	void printPer(String prefix,String s ){	
+		if ( s.length()==1){
+			System.out.println(prefix+s);		
+			return ;
+		}
+		for ( int i=0;i<s.length();i++){
+			String permutedString=s.substring(0,i)+s.substring(i+1);
+			String pr=prefix+s.charAt(i);
+			
+			printPer(pr,permutedString);
+		}
+	}
