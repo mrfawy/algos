@@ -1,7 +1,9 @@
 Q1) permute String 
 
 Soln:
-select each character at a time as prefix , append permuted rest of string
+Try each of the letters in turn as the first letter and then find all the permutations of the remaining letters using a recursive call.
+The base case is when the input is an empty string the only permutation is the empty string.
+
 void printpermutes(String s ){
 		if (s.isEmpty())
 			return ;	
